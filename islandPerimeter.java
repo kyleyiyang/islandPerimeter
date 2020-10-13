@@ -11,7 +11,7 @@ public class Main
 	public static int count=0;
      public static void main(String []args){
         System.out.println("Hello World");
-        int[][] arr = {{0,1,0,0},{1,1,1,0}};
+        int[][] arr = {{0,1,0,0}};
         rec(arr);
         System.out.println(count);
      }
@@ -21,7 +21,9 @@ public class Main
              for (int j=0; j<arr[i].length;j++) {
                  if (arr[i][j] ==1) {
                      int top,left,right,bottom;
-                     if (i==0 && j==0) {
+                     if (arr.length==1) {
+                         top=0;bottom=0;right=arr[i][j+1];left=arr[i][j-1];
+                    } else if (i==0 && j==0) {
                          top=0;left=0;right=arr[i][j+1];bottom=arr[i+1][j];
                          //count =count+4-(arr[i+1][j]+arr[i][j+1]);
                      } else if (i==0 && j==arr[i].length-1) {
