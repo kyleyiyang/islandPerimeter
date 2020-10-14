@@ -3,9 +3,10 @@ class Solution {
         int count=0;
         int[][] map = new int[grid.length+2][grid[0].length+2];
         for (int i=1; i<grid.length+1;i++) {
-            for (int j=1; j<grid[0].length+1;j++) {
+            System.arraycopy(grid[i-1], 0, map[i], 1, grid[0].length);
+            /*for (int j=1; j<grid[0].length+1;j++) {
                 map[i][j] = grid[i-1][j-1];
-            }
+            }*/
         }
         for (int i=1; i<grid.length+1;i++) {
             for (int j=1; j<grid[0].length+1;j++) {
